@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Making release artifacts
           command: ./gradlew assembleRelease
-          command: cp -r papp/build/outputs/apk/release/app-release-unsigned.apk $CIRCLE_ARTIFACTS
+          command: cp -r app/build/outputs/apk/release/app-release-unsigned.apk $CIRCLE_ARTIFACTS
       - store_artifacts:
           path: app/build/reports
           destination: reports
