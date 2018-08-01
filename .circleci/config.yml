@@ -24,9 +24,12 @@ jobs:
           name: Run Tests
           command: ./gradlew lint test
       - run:
-          name: Making release artifacts
+          name: Building apk
           command: ./gradlew assembleRelease build
+      - run:
+          name: APK artifact
           command: cp -r app/build/outputs/apk/release/app-release-unsigned.apk $CIRCLE_ARTIFACTS
+
       - store_artifacts:
           path: app/build/reports
           destination: reports
