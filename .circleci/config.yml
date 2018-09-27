@@ -21,12 +21,6 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Setting properties
-          command: ./gradlew -PcommandLineProjectProp=commandLineProjectPropValue -Dorg.gradle.project.systemProjectProp=systemPropertyValue
-      - run:
-          name: Printing properties
-          command: ./gradlew printProps
-      - run:
           name: Run Tests
           command: ./gradlew lint test
       - run:
